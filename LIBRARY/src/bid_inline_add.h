@@ -1,5 +1,5 @@
 /******************************************************************************
-  Copyright (c) 2007-2018, Intel Corp.
+  Copyright (c) 2007-2024, Intel Corp.
   All rights reserved.
 
   Redistribution and use in source and binary forms, with or without 
@@ -493,7 +493,7 @@ __bid_simple_round64_sticky (BID_UINT64 sign, int exponent, BID_UINT128 P,
 
   // get P*(2^M[extra_digits])/10^extra_digits
   __mul_128x128_full (Q_high, Q_low, P,
-                      bid_reciprocals10_128[extra_digits]);
+		      bid_reciprocals10_128[extra_digits]);
 
   // now get P/10^extra_digits: shift Q_high right by M[extra_digits]-128
   amount = bid_recip_scale[extra_digits];
@@ -557,7 +557,7 @@ __bid_full_round64 (BID_UINT64 sign, int exponent, BID_UINT128 P,
 
     // get P*(2^M[extra_digits])/10^extra_digits
     __mul_128x128_full (Q_high, Q_low, P,
-                        bid_reciprocals10_128[extra_digits]);
+			bid_reciprocals10_128[extra_digits]);
 
     // now get P/10^extra_digits: shift Q_high right by M[extra_digits]-128
     amount = bid_recip_scale[extra_digits];
@@ -668,7 +668,7 @@ __bid_full_round64_remainder (BID_UINT64 sign, int exponent, BID_UINT128 P,
 
     // get P*(2^M[extra_digits])/10^extra_digits
     __mul_128x128_full (Q_high, Q_low, P,
-                        bid_reciprocals10_128[extra_digits]);
+			bid_reciprocals10_128[extra_digits]);
 
     // now get P/10^extra_digits: shift Q_high right by M[extra_digits]-128
     amount = bid_recip_scale[extra_digits];
@@ -770,7 +770,7 @@ __truncate (BID_UINT128 P, int extra_digits)
 
   // get P*(2^M[extra_digits])/10^extra_digits
   __mul_128x128_full (Q_high, Q_low, P,
-                      bid_reciprocals10_128[extra_digits]);
+		      bid_reciprocals10_128[extra_digits]);
 
   // now get P/10^extra_digits: shift Q_high right by M[extra_digits]-128
   amount = bid_recip_scale[extra_digits];
@@ -934,6 +934,7 @@ bid_get_add128 (BID_UINT64 sign_x, int exponent_x, BID_UINT64 coefficient_x,
 	      coefficient_x += D;
 	    }
 	    break;
+	  default: break; // default added to avoid compiler warning
 	  }
 	  if (coefficient_x < 1000000000000000ull) {
 	    coefficient_x -= D;
@@ -983,7 +984,7 @@ bid_get_add128 (BID_UINT64 sign_x, int exponent_x, BID_UINT64 coefficient_x,
       return __bid_full_round64_remainder (sign_x, final_exponent_y, CT,
 					   diff_dec2, remainder_y,
 					   rounding_mode, fpsc, 0);
-    }
+   }
   }
   // Here (exponent_x <= exponent_y)
   {
@@ -1123,6 +1124,7 @@ bid_get_add128 (BID_UINT64 sign_x, int exponent_x, BID_UINT64 coefficient_x,
       } else if (FS.w[1] | FS.w[0])
 	CYh++;
       break;
+    default: break; // default added to avoid compiler warning
     }
 #endif
 #endif
