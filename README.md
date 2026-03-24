@@ -1,8 +1,8 @@
-# Intel® Decimal Floating-Point Math Library 20u3
+# Intel® Decimal Floating-Point Math Library 20u4
 
 ## Overview
 
-This repository is used as a playground for **Intel® Decimal Floating-Point Math Library 20u3**
+This repository is used as a playground for **Intel® Decimal Floating-Point Math Library 20u4**
 
 Original sources of **Intel® Decimal Floating-Point Math Library 20u2** have been  downloaded from [here].
 
