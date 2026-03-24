@@ -2,7 +2,7 @@
 
 ## Overview
 
-This repository s used as a playground for **Intel® Decimal Floating-Point Math Library 20u2**
+This repository is used as a playground for **Intel® Decimal Floating-Point Math Library 20u2**
 
 Original sources of **Intel® Decimal Floating-Point Math Library 20u2** have been  downloaded from [here].
 
